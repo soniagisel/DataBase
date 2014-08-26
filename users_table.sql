@@ -19,11 +19,13 @@ INSERT INTO users (first_name, last_name, sex, age) VALUES ("Dante", "Pregal", "
 INSERT INTO users (first_name, last_name, sex, age) VALUES ("Bruno", "Yorda", "male", 24);
 INSERT INTO users (first_name, last_name, sex, age) VALUES ("Pedro", "Pereyra", "male", 26);
 
-SELECT * FROM users;
+#SELECT * FROM users;
 #SELECT * FROM users WHERE age>=25;
 #SELECT * FROM users WHERE first_name LIKE "A%";
 #SELECT * FROM users WHERE upper(first_name) LIKE "A%" and sex="male";
+UPDATE users SET first_name="Updated" WHERE (sex="female") and (age BETWEEN 18 and 26);
 #DELETE FROM users WHERE age=null;
+SELECT * FROM users;
 
 DROP TABLE IF EXISTS locations;
 CREATE TABLE locations (
