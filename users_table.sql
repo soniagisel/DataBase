@@ -23,23 +23,23 @@ INSERT INTO users (first_name, last_name, sex, age) VALUES ("Pedro", "Pereyra", 
 #SELECT * FROM users WHERE age>=25;
 #SELECT * FROM users WHERE first_name LIKE "A%";
 #SELECT * FROM users WHERE upper(first_name) LIKE "A%" and sex="male";
-UPDATE users SET first_name="Updated" WHERE (sex="female") and (age BETWEEN 18 and 26);
+#UPDATE users SET first_name="Updated" WHERE (sex="female") and (age BETWEEN 18 and 26);
 #DELETE FROM users WHERE age=null;
 SELECT * FROM users;
 
 DROP TABLE IF EXISTS locations;
 CREATE TABLE locations (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	first_name VARCHAR (50) NOT NULL,
-	last_name VARCHAR (50) NOT NULL,
-	location ENUM ("North Park", "South Park", "Alsina", "Laminar") NOT NULL
+	id_loc INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	users_ID INT NOT NULL AUTO_INCREMENT,
+	location ENUM ("North Park", "South Park", "Alsina", "Laminar") NOT NULL,
+	FOREIGN KEY (users_ID) REFERENCES users(id)
 );
 
-INSERT INTO locations (first_name, last_name, location) VALUES ("Carolina", "Santucho", "North Park");
-INSERT INTO locations (first_name, last_name, location) VALUES ("Emanuel", "Pérez", "South Park");
-INSERT INTO locations (first_name, last_name, location) VALUES ("Ricardo", "Molina", "Laminar");
-INSERT INTO locations (first_name, last_name, location) VALUES ("Felipe", "Miceli", "South Park");
-INSERT INTO locations (first_name, last_name, location) VALUES ("Fernanda", "Gonzalez", "North Park");
+INSERT INTO locations (location) VALUES ("North Park");
+INSERT INTO locations (location) VALUES ("South Park");
+INSERT INTO locations (location) VALUES ("Laminar");
+INSERT INTO locations (location) VALUES ("South Park");
+INSERT INTO locations (location) VALUES ("North Park");
 
 SELECT * FROM locations;
 #TRUNCATE TABLE locations;
