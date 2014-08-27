@@ -37,7 +37,7 @@ CREATE TABLE locations (
 
 INSERT INTO locations (uid, location) VALUES (1, "North Park");
 INSERT INTO locations (uid, location) VALUES (2, "South Park");
-INSERT INTO locations (uid, location) VALUES (3, Laminar");
+INSERT INTO locations (uid, location) VALUES (3, "Laminar");
 INSERT INTO locations (uid, location) VALUES (4, "South Park");
 INSERT INTO locations (uid, location) VALUES (5, "North Park");
 
