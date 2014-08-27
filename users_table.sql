@@ -30,16 +30,16 @@ SELECT * FROM users;
 DROP TABLE IF EXISTS locations;
 CREATE TABLE locations (
 	id_loc INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	users_ID INT NOT NULL AUTO_INCREMENT,
+	uid INT,
 	location ENUM ("North Park", "South Park", "Alsina", "Laminar") NOT NULL,
-	FOREIGN KEY (users_ID) REFERENCES users(id)
+	FOREIGN KEY (uid) REFERENCES users(id)
 );
 
-INSERT INTO locations (location) VALUES ("North Park");
-INSERT INTO locations (location) VALUES ("South Park");
-INSERT INTO locations (location) VALUES ("Laminar");
-INSERT INTO locations (location) VALUES ("South Park");
-INSERT INTO locations (location) VALUES ("North Park");
+INSERT INTO locations (uid, location) VALUES (1, "North Park");
+INSERT INTO locations (uid, location) VALUES (2, "South Park");
+INSERT INTO locations (uid, location) VALUES (3, Laminar");
+INSERT INTO locations (uid, location) VALUES (4, "South Park");
+INSERT INTO locations (uid, location) VALUES (5, "North Park");
 
 SELECT * FROM locations;
 #TRUNCATE TABLE locations;
