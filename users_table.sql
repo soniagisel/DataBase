@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS globant;
+CREATE DATABASE globant;
 USE globant;
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
