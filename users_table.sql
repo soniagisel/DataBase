@@ -26,15 +26,16 @@ INSERT INTO users (first_name, last_name, sex, age) VALUES ("Pedro", "Pereyra", 
 #SELECT * FROM users WHERE first_name LIKE "A%";
 #SELECT * FROM users WHERE upper(first_name) LIKE "A%" and sex="male";
 #UPDATE users SET first_name="Updated" WHERE (sex="female") and (age BETWEEN 18 and 26);
-#DELETE FROM users WHERE age=null;
-SELECT * FROM users;
+#DELETE FROM users WHERE age=26;
+#DELETE FROM users WHERE id=2;
+#SELECT * FROM users;
 
 DROP TABLE IF EXISTS locations;
 CREATE TABLE locations (
 	id_loc INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	uid INT,
 	location ENUM ("North Park", "South Park", "Alsina", "Laminar") NOT NULL,
-	FOREIGN KEY (uid) REFERENCES users(id) ON DELETE CASCADE
+	FOREIGN KEY (uid) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 INSERT INTO locations (uid, location) VALUES (1, "North Park");
@@ -43,6 +44,11 @@ INSERT INTO locations (uid, location) VALUES (3, "Laminar");
 INSERT INTO locations (uid, location) VALUES (4, "South Park");
 INSERT INTO locations (uid, location) VALUES (5, "North Park");
 
-SELECT * FROM locations;
+#SELECT * FROM locations;
 #TRUNCATE TABLE locations;
 #DROP TABLE locations;
+
+SELECT first_name, last_name, location
+ FROM users
+ JOIN locations
+ ON users.first_name=locations.location;
