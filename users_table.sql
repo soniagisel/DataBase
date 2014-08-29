@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS globant;
+CREATE DATABASE globant;
 USE globant;
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
@@ -32,7 +34,7 @@ CREATE TABLE locations (
 	id_loc INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	uid INT,
 	location ENUM ("North Park", "South Park", "Alsina", "Laminar") NOT NULL,
-	FOREIGN KEY (uid) REFERENCES users(id)
+	FOREIGN KEY (uid) REFERENCES users(id) ON DELETE CASCADE
 );
 
 INSERT INTO locations (uid, location) VALUES (1, "North Park");
