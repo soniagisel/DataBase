@@ -10,7 +10,6 @@ CREATE TABLE users (
 	age INT (3) NULL
 );
 
-
 INSERT INTO users (first_name, last_name, sex, age) VALUES ("Carolina", "Santucho", "female", 26);
 INSERT INTO users (first_name, last_name, sex, age) VALUES ("Emanuel", "Pérez", "male", 40);
 INSERT INTO users (first_name, last_name, sex, age) VALUES ("Ricardo", "Molina", "male", 29);
